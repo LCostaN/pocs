@@ -1,4 +1,4 @@
-package br.com.mega.shared_preferences_poc
+package br.com.amorimnantes.search_poc
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity
