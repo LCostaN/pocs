@@ -69,7 +69,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               const SizedBox(height: 16.0),
-              Image.network(hero.data.imageUrl),
+              Image.network(hero.model.imageUrl),
               const SizedBox(height: 16.0),
               Row(
                 mainAxisSize: MainAxisSize.min,
@@ -80,7 +80,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   SizedBox(
                     width: 300,
-                    child: Center(child: Text(hero.data.name)),
+                    child: Center(child: Text(hero.model.name)),
                   ),
                 ],
               ),
@@ -97,7 +97,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   SizedBox(
                     width: 300,
-                    child: Center(child: Text(hero.data.power)),
+                    child: Center(child: Text(hero.model.power)),
                   ),
                 ],
               ),
@@ -114,7 +114,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   SizedBox(
                     width: 300,
-                    child: Center(child: Text("${hero.data.hp}")),
+                    child: Center(child: Text("${hero.model.hp}")),
                   ),
                 ],
               ),

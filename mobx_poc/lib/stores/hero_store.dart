@@ -7,7 +7,7 @@ class HeroStore = _HeroStore with _$HeroStore;
 
 abstract class _HeroStore with Store {
   @observable
-  HeroModel data = HeroModel(
+  HeroModel model = HeroModel(
     imageUrl:
         "https://raw.githubusercontent.com/mobxjs/mobx.dart/master/docs/src/images/mobx.png",
     name: "MOBX",
@@ -15,24 +15,23 @@ abstract class _HeroStore with Store {
   );
 
   @computed
-  bool get isDead => data.hp <= 0;
+  bool get isDead => model.hp <= 0;
 
   @observable
   List<String> log = ObservableList();
 
   @action
   void takeDamage(int damage) {
-    data.hp -= damage;
-    log.add("Taken -$damage damage. HP left: ${data.hp}");
-    if (isDead) log.add("${data.name} hero is Dead!");
+    model.hp -= damage;
+    log.add("Taken -$damage damage. HP left: ${model.hp}");
+    if (isDead) log.add("${model.name} hero is Dead!");
 
-    print(this.isDead);
     return;
   }
 
   @action
   void reset() {
-    data = HeroModel(
+    model = HeroModel(
       imageUrl:
           "https://raw.githubusercontent.com/mobxjs/mobx.dart/master/docs/src/images/mobx.png",
       name: "MOBX",

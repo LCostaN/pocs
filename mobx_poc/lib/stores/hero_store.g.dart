@@ -15,21 +15,21 @@ mixin _$HeroStore on _HeroStore, Store {
   bool get isDead =>
       (_$isDeadComputed ??= Computed<bool>(() => super.isDead)).value;
 
-  final _$dataAtom = Atom(name: '_HeroStore.data');
+  final _$modelAtom = Atom(name: '_HeroStore.model');
 
   @override
-  HeroModel get data {
-    _$dataAtom.context.enforceReadPolicy(_$dataAtom);
-    _$dataAtom.reportObserved();
-    return super.data;
+  HeroModel get model {
+    _$modelAtom.context.enforceReadPolicy(_$modelAtom);
+    _$modelAtom.reportObserved();
+    return super.model;
   }
 
   @override
-  set data(HeroModel value) {
-    _$dataAtom.context.conditionallyRunInAction(() {
-      super.data = value;
-      _$dataAtom.reportChanged();
-    }, _$dataAtom, name: '${_$dataAtom.name}_set');
+  set model(HeroModel value) {
+    _$modelAtom.context.conditionallyRunInAction(() {
+      super.model = value;
+      _$modelAtom.reportChanged();
+    }, _$modelAtom, name: '${_$modelAtom.name}_set');
   }
 
   final _$logAtom = Atom(name: '_HeroStore.log');
