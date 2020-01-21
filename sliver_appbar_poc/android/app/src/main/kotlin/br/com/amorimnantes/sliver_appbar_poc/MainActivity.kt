@@ -1,4 +1,4 @@
-package br.com.mega.sliver_appbar_poc
+package br.com.amorimnantes.sliver_appbar_poc
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity
